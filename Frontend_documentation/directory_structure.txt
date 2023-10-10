@@ -1,0 +1,89 @@
+# ** Guidelines to creating directories
+
+# Component Hierarchy:
+
+    # App: The main application component that serves as the entry point.
+        # Header: The website's header component, containing the logo, navigation, and user-related options.
+        # Footer: The footer component with site information and links.
+        # Routes: A container for defining various routes and their corresponding components.
+            # Home: The homepage component displaying featured products and promotions.
+            # ProductList: A component for listing products within categories.
+            # ProductDetail: The detailed product page.
+            # Cart: The shopping cart page.
+            # Checkout: The checkout process, including cart summary and payment.
+            # User: User-related pages for login, registration, and user profile.
+        # Not Found: A 404 error page for invalid routes.
+
+
+# Static Assets:
+
+# Images: All images, including the website logo and product images, are stored in the /src/assets/images directory.
+# Fonts: Custom fonts are located in the /src/assets/fonts directory.
+# Static assets, such as images and fonts, 
+  are organized within dedicated directories for easy access and management. 
+  Component files are structured based on functionality, with common components, 
+  product-related components, cart-related components, 
+  and user-related components each in their respective directories. 
+  The Redux store, actions, reducers, services, and utility functions are organized to manage data
+   and interactions efficiently.
+
+# This directory structure and component hierarchy provide a clear and organized foundation for the 
+frontend development of your e-commerce website, making it easier to collaborate, maintain, and scale the project.
+
+
+
+/src
+  /assets
+    /images
+      - logo.png
+      - product1.jpg
+      - product2.jpg
+      - ...
+    /fonts
+      - font1.woff
+      - font2.woff
+      - ...
+  /components
+    /common
+      - Header.js
+      - Footer.js
+      - ...
+    /product
+      - ProductList.js
+      - ProductDetail.js
+      - ...
+    /cart
+      - ShoppingCart.js
+      - CheckoutForm.js
+      - ...
+    /user
+      - UserLogin.js
+      - UserRegistration.js
+      - UserProfile.js
+      - ...
+  /styles
+    - main.scss
+    - _variables.scss
+    - _mixins.scss
+  /redux
+    /actions
+      - productActions.js
+      - cartActions.js
+      - userActions.js
+    /reducers
+      - productReducer.js
+      - cartReducer.js
+      - userReducer.js
+  /services
+    - productService.js
+    - cartService.js
+    - userService.js
+  /utils
+    - api.js
+    - helpers.js
+/public
+  - index.html
+  - manifest.json
+  /assets
+    /images
+    /fonts
