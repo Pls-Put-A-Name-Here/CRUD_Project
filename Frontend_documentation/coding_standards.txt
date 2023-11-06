@@ -2,13 +2,9 @@
     Code Style:
         For maintaining a consistent and clean codebase, will adhere to the following coding style guide:
 
-    JavaScript/JSX: 
-        We will follow the Airbnb JavaScript Style Guide for writing JavaScript and JSX code. 
-        This style guide promotes best practices for code quality, readability, and maintainability.
-
     Documentation:
         Proper code documentation is crucial for understanding and maintaining the codebase. 
-        We will use JSDoc-style comments for documenting code, with the following conventions:
+        We will use "<!-- -->", "/* */" and "//" for HTML, CSS and JS commenting for documenting code, with the following conventions:
 
     Code Comments: 
         We will include comments for functions, methods, classes, and 
@@ -16,4 +12,24 @@
 
     File Headers: 
         Each JavaScript file should include a header comment at the top, 
-        briefly describing the file's purpose, author, date, and any relevant version information.
+        briefly describing the file's purpose, and any relevant version information.
+
+
+
+*HTML:
+    - We should know much about HTML semantics and use them accordingly.
+    - Understand in depth the right and easy structure to make styling in css easy.
+    - Make use of classes, id and names.
+    - Small letters should be used in writing tags or elements
+
+
+*CSS:
+    - Understand the concept of layouts(flex, grid,etc) and the type of structure used in you HTML file.
+    - Make use of css selectors and specificity.
+    - Make styling more specific.
+    - CODING CASE
+ 
+*JavaScript: 
+    - We will follow the strict JavaScript Style Guide for writing JavaScript. 
+    - This style guide promotes best practices for code quality, readability, and maintainability.
+    - CODING CASE
