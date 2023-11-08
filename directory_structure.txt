@@ -1,0 +1,36 @@
+frontend/
+│
+├── project_docs/     # Documentation folder
+│   ├── requirements.doc
+│   ├── design_spec.txt
+│   ├── wireframes/
+│   ├── README.md
+│
+├── source_code/       # Source code folder
+	│   ├── html/
+	│   ├── css/
+	│   ├── js/
+	│   ├── img/
+	│   ├── fonts/
+	│   ├── vendor/
+
+	
+backend/
+│
+├── project_docs/     # Documentation folder
+│   ├── requirements.doc
+│   ├── design_spec.txt
+│   ├── 
+│   ├── README.md
+│
+├── source_code/       # Source code folder
+	│   ├── 
+	│   ├── 
+	│   ├── 
+	│   ├── 
+	│   ├── 
+	│   ├── 
+	|
+	
+├── directory_structure.txt
+├── README.md

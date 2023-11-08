@@ -1,0 +1,45 @@
+frontend/
+│
+├── project_docs/     # Documentation folder
+│   ├── requirements.doc
+│   ├── design_spec.txt
+│   ├── wireframes/
+│   ├── README.md
+│
+├── source_code/       # Source code folder
+	    ├── html/
+		├── index.html         # The main HTML file (home page)
+		├── products.html      # HTML file for product listings
+		├── product_details.html # HTML file for individual product details
+		├── ....html             #Other html files
+		
+	    ├── css/
+		├── index.css      # Main CSS file for styling(homepage)
+   		├── products.css
+    		├── product_details.css
+    		├── ....css		#Other css files
+    		
+	    ├── js/                # Directory for JavaScript (if needed)
+		├── index.js       # Homepage's JavaScript file
+		├── products.js
+		├── product.js
+		├── ....js
+		
+	    ├── img/               # Directory for images
+   		├── product1.jpg
+   		├── product2.jpg
+   		├── ....jpg
+
+	    ├── fonts/             # Directory for fonts (if needed)
+   		├── ...
+	    
+	    ├── vendor/            # Directory for third-party libraries (e.g., Bootstrap)
+		    ├── bootstrap/
+		    │   ├── css/
+		    │   ├── js/
+		    │   └── ...
+		    └── ...
+
+
+
+NOTE: Please let's all make our reseasrch and modify what is over here.
