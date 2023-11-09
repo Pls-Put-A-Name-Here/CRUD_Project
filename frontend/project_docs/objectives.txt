@@ -1,0 +1,15 @@
+-Let's look at the main objectives
+
+1. Highly *Functional* and minimalist design:
+		especially those working on the checkout and payment processing as well as the user account
+
+2. User friendly and interface(User Experience)
+
+
+
+
+cores to the endpoint 
+token auth
+API
+
+ 

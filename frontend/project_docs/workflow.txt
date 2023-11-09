@@ -1,0 +1,19 @@
+Frontend Developer 1:
+Homepage: As the first page users see, the homepage sets the overall design and layout of the site. Collaborates with Developer 2,3 and 4 for navigation integration into the other pages(product listing, shopping cart, user account, etc).
+Navigation and Menu: Ensures that the navigation and menu created are seamlessly integrated into the homepage.
+
+Frontend Developer 2:
+Product Listings: Develop the product listing section, which needs to be linked from the Developer 1’s  homepage's featured products and promotions.
+Product Detail Pages: makes sure that the product detail pages are linked from product listings which is his own responsibility.
+
+Frontend Developer 3:
+Shopping Cart: Designing and implementing the shopping cart is crucial for the shopping experience. Collaborates with Developer 2 to ensure that products can be added from product listings and detail pages.
+Checkout Process: The shopping cart feeds into the checkout process, which Developer 3 is responsible for. This collaboration ensures a seamless transition from cart to checkout.
+
+Frontend Developer 4:
+Payment Processing: Integrates payment gateways, which are part of the checkout process. Collaborates closely with Developer 3 to ensure secure and efficient payment processing.
+User Account: The payment processing step feeds into the user account functionality, as successful transactions need to be reflected in order history.
+
+In terms of additional components:
+Frontend Developer 1: Implements User Feedback and Reviews and Wishlist and Favorites. These features can be integrated into the product detail pages and the user's account.
+Frontend Developer 2: Works on Notifications and Alerts, which can be integrated into the user's account to send order confirmations and shipping updates.

@@ -1,0 +1,20 @@
+Frontend Developer 1 Roy:
+Homepage: Design and implement the homepage, including featured products and promotions.
+Navigation and Menu: Create a user-friendly navigation menu to help users explore the website.
+
+Frontend Developer 2 Manasseh:
+Product Listings: Develop the product listing section, allowing users to browse and filter products.
+Product Detail Pages: Create the product detail pages with images, descriptions, and pricing.
+
+Frontend  Developer 3 Raffiq:
+Shopping Cart: Design and implement the shopping cart, including adding, updating, and viewing cart items.
+Checkout Process: Build the checkout process, including order review and payment options.
+
+Frontend Developer 4 Jonathan:
+ Payment Processing: Integrate payment gateways for secure and efficient payment processing.
+User Account: Develop user account functionality, including profile management and order history.
+
+
+Additional work to Dev 1 and 2
+Frontend Developer 1: Implement User Feedback and Reviews and Wishlist and Favorites.
+Frontend Developer 2: Work on Notifications and Alerts.
