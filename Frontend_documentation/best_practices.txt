@@ -1,3 +1,0 @@
-**Coding practices
-
-refer to https://flatlogic.com/blog/7-best-practices-for-web-development/
