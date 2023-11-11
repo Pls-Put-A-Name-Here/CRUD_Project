@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ----------------Desktop-View-------------- */
+.container{
+    margin: 0 5%;
+}
+
+/* -----header----- */
+
+header{
+    position: sticky;
+    top: 0;
+    height: 15.5vh; 
+}
+header section{
+    display: flex;
+    align-items: center;
+}
+header .section_1{
+ 
+    background: #ababab;
+    padding: 0.8rem 1.7rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+.search-container {
+    position: relative;
+    width: 350px;
+}
+
+/* Style for the search input */
+.search_input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+/* Style for the search button */
+.search_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem;
+    border: none;
+    background-color: #0561ca;
+    color: #fff;
+    margin: 2.8px 3px 0px 0px;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+
+
+
+header .section_2{
+    background: #0561ca;
+}
+header nav{
+    width: 70%;
+}
+header .section_2 ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    
+}
+header .section_2 ul li{
+    display: inline-block;
+    margin: 0.8rem ;
+
+
+}
+header .section_2 li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* -------------Landing Page------------ */
+#landing{
+    height: 84.5vh;
+}
+
+
+#slider{
+    background: #ababab;
+    margin: 0.8rem;
+    height: 69vh;
+}
+
+
+#offers{
+    display: flex;
+    justify-content: space-between;
+}
+#offers .landing_items{
+    border-right: 2px solid black;
+    padding: 3px;
+    display: flex;
+    gap: 0.5rem;
+}
