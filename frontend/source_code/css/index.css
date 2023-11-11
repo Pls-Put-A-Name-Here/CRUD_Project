@@ -94,31 +94,43 @@ header .section_2 li a{
 
 /* -------slide----- */
 
-.slider_container {
+#landing .slider_container {
     position: relative;
     width: 100%;
     overflow: hidden;
     
   }
   
-  .slider {
+#landing .slider {
     display: flex;
     transition: transform 0.7s ease-in-out;
     margin: 0.8rem;
     height: 69vh;
     gap: 0.5rem;
+
   }
   
-  .slide {
+  #landing .slide {
     flex: 0 0 96%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0.7rem;
     text-align: center;
     border: 1px solid #ccc;
     background: #ababab;
     border-radius: 0.5rem;
+    display: flex;
+    gap: 15%;
+    justify-content: space-between;
+    align-items: center;
   }
   
+  #landing .slide div:nth-child(2){
+    width: 50%;
+  } 
+  #landing .slide img{
+    width: 100%;
+
+  }
   .prev-btn,
   .next-btn {
     position: absolute;
