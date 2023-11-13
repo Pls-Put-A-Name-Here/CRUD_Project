@@ -17,6 +17,7 @@ header{
     position: sticky;
     top: 0;
     height: 15.5vh; 
+    z-index: 888;
 }
 header section{
     display: flex;
@@ -170,4 +171,13 @@ header .section_2 li a{
     display: flex;
     gap: 0.5rem;
 
+}
+
+/* -----popular categories----- */
+.classifications{
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    background: #ababab;
+    margin: 1rem;
 }
