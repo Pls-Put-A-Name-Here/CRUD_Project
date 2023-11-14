@@ -111,49 +111,51 @@ header .section_2 li a{
 
   }
   
-  #landing .slide {
-    flex: 0 0 96%;
-    box-sizing: border-box;
-    padding: 0.7rem;
-    text-align: center;
-    border: 1px solid #ccc;
-    background: #ababab;
-    border-radius: 0.5rem;
-    display: flex;
-    gap: 15%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #landing .slide div:nth-child(2){
-    width: 50%;
-  } 
-  #landing .slide img{
-    width: 100%;
+#landing .slide {
+flex: 0 0 96%;
+box-sizing: border-box;
+padding: 0.7rem;
+text-align: center;
+border: 1px solid #ccc;
+background: linear-gradient(170deg, #0876f3 2%, #fff);
+border-radius: 0.5rem;
+display: flex;
+gap: 15%;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0px 0.1rem 0.3rem;
+}
 
-  }
-  .prev-btn,
-  .next-btn {
-    position: absolute;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: #3498db;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 100%;
-  }
+#landing .slide div:nth-child(2){
+    width: 50%;
+} 
+
+#landing .slide img{
+width: 100%;
+
+}
+.prev-btn,
+.next-btn {
+position: absolute;
+top: 50%;
+width: 40px;
+height: 40px;
+background-color: #3498db;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 100%;
+}
   
-  .prev-btn {
-    left: 0.4rem;
-  }
+.prev-btn {
+left: 0.4rem;
+}
   
-  .next-btn {
-    right: 0.4rem;
-  }
-  
+.next-btn {
+right: 0.4rem;
+}
+
 
 
 .container{
@@ -165,6 +167,7 @@ header .section_2 li a{
     display: flex;
     justify-content: space-between;
 }
+
 #offers .landing_items{
     border-right: 2px solid black;
     padding: 3px;
@@ -175,9 +178,33 @@ header .section_2 li a{
 
 /* -----popular categories----- */
 .classifications{
-    padding: 0.8rem;
+    padding: 2rem 1rem 0.3rem;
     display: flex;
     justify-content: space-between;
     background: #ababab;
-    margin: 1rem;
+}
+
+.classifications_items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.classifications_items .items{
+    padding: 2.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: #ababab;
+    max-width: 500px;
+    max-height: 200px;
+    
+}
+
+.classifications_items .items img{
+    width: 10rem;
 }
