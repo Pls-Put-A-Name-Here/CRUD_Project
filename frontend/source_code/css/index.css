@@ -175,6 +175,10 @@ right: 0.4rem;
     gap: 0.5rem;
 
 }
+#offers .landing_items i{
+    display: flex;
+    align-items: center;
+}
 
 /* -----popular categories----- */
 .classifications{
