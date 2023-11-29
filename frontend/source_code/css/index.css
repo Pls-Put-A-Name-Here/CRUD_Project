@@ -36,6 +36,11 @@ header a{
 header a:hover{
     color: var(--link-hover);
 }
+
+header img{
+    width: 18px;
+}
+
 header section{
     display: flex;
     align-items: center;
