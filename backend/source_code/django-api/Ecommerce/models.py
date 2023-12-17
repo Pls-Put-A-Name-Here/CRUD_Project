@@ -218,7 +218,7 @@ class Tblproductbrand(models.Model):
         db_table = 'tblproductbrand'
 
 
-class Tblproductcategory(models.Model):
+class ProductCategory(models.Model):
     prdcategoryidpk = models.AutoField(db_column='prdCategoryIdpk', primary_key=True)  # Field name made lowercase.
     prdcategoryname = models.CharField(db_column='prdCategoryName', max_length=255, blank=True,
                                        null=True)  # Field name made lowercase.
@@ -230,7 +230,7 @@ class Tblproductcategory(models.Model):
         db_table = 'tblproductcategory'
 
 
-class Tblproductsubcategory(models.Model):
+class ProductSubCategory(models.Model):
     prdsubcategoryidpk = models.AutoField(db_column='prdSubCategoryIdpk',
                                           primary_key=True)  # Field name made lowercase.
     prdsubcategoryname = models.CharField(db_column='prdSubCategoryName', max_length=255, blank=True,
@@ -243,7 +243,7 @@ class Tblproductsubcategory(models.Model):
         db_table = 'tblproductsubcategory'
 
 
-class Tblpurchases(models.Model):
+class Purchases(models.Model):
     pchidpk = models.AutoField(db_column='pchIdpk', primary_key=True)  # Field name made lowercase.
     pchordidfk = models.ForeignKey(Tblorder, models.DO_NOTHING, db_column='pchOrdIdfk', blank=True,
                                    null=True)  # Field name made lowercase.
@@ -261,7 +261,7 @@ class Tblpurchases(models.Model):
         db_table = 'tblpurchases'
 
 
-class Tblreturns(models.Model):
+class Returns(models.Model):
     field_returnidpk = models.AutoField(db_column='\xa0returnIdPK',
                                         primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
     field_customerid = models.IntegerField(
@@ -285,7 +285,7 @@ class Tblreturns(models.Model):
         db_table = 'tblreturns'
 
 
-class Tblreviews(models.Model):
+class Reviews(models.Model):
     rwvidpk = models.AutoField(db_column='rwvIdpk', primary_key=True)  # Field name made lowercase.
     rwvuseridfk = models.IntegerField(db_column='rwvUserIdfk', blank=True, null=True)  # Field name made lowercase.
     rwvproductidfk = models.IntegerField(db_column='rwvProductIdfk', blank=True,
@@ -300,7 +300,7 @@ class Tblreviews(models.Model):
         db_table = 'tblreviews'
 
 
-class Tblshippingmethod(models.Model):
+class ShippingMethod(models.Model):
     field_shippingmethodidpk = models.AutoField(db_column='\xa0shippingMethodIdpk',
                                                 primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
     field_shippingmethodname = models.CharField(db_column='\xa0shippingMethodName',
@@ -316,7 +316,7 @@ class Tblshippingmethod(models.Model):
         db_table = 'tblshippingmethod'
 
 
-class Tblshoppingcart(models.Model):
+class ShoppingCart(models.Model):
     cartidpk = models.OneToOneField(Tblcustomer, models.DO_NOTHING, db_column='cartIdpk',
                                     primary_key=True)  # Field name made lowercase.
     custidfk = models.IntegerField(db_column='custIdfk')  # Field name made lowercase.
