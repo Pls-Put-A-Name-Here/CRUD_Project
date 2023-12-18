@@ -23,100 +23,100 @@ class serializer_name(serializers.ModelSerializer):
 
 class CartItemSerialiser(serializers.ModelSerializer):
     class Meta:
-        model = "Tblcartitem"
+        model = "CartItem"
         fields = '__all__'
 
-class TblcustomerSerialiser(serializers.ModelSerializer):
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblcustomer"
+        model = "Customer"
         fields = '__all__'
 
-class TblcustomeraddressSerialiser(serializers.ModelSerializer):
+class CustomerAddressSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblcustomeraddress"
+        model = "CustomerAddress"
         fields = '__all__'
-class TblcustomercountrySerializer(serializers.ModelSerializer):
+class CountrySerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblcustomercountry"
+        model = "Country"
         fields = '__all__'
 
-class TblcustomerstateSerializer(serializers.ModelSerializer):
+class CustomerStateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblcustomerstate"
+        model = "State"
         fields = '__all__'
-class TbldiscountSerialiser(serializers.ModelSerializer):
+class DiscountSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tbldiscount"
+        model = "Discount"
         fields = '__all__'
-class TblgndSerialiser(serializers.ModelSerializer):
+class GenderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblgnd"
+        model = "Gender"
         fields = '__all__'
-class TblinventorySerialiser(serializers.ModelSerializer):
+class InventorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblinventory"
+        model = "Inventory"
         fields = '__all__'
-class TblorderSerialiser(serializers.ModelSerializer):
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblorder"
+        model = "Order"
         fields = '__all__'
-class TblorderitemsSerialiser(serializers.ModelSerializer):
+class OrderItemsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblorderitems"
+        model = "OrderItems"
         fields = '__all__'
-class TblpaymentstatusSerialiser(serializers.ModelSerializer):
+class PaymentStatusSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblpaymentstatus"
+        model = "PaymentStatus"
         fields = '__all__'
-class TblproductSerialiser(serializers.ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblproduct"
+        model = "Product"
         fields = '__all__'
-class TblproductbrandSerialiser(serializers.ModelSerializer):
+class ProductBrandSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblproductbrand"
+        model = "ProductBrand"
         fields = '__all__'
-class TblproductcategorySerialiser(serializers.ModelSerializer):
+class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblproductcategory"
+        model = "ProductCategory"
         fields = '__all__'
-class TblproductsubcategorySerialiser(serializers.ModelSerializer):
+class ProductSubCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblproductsubcategory"
+        model = "ProductSubCategory"
         fields = '__all__' 
-class TblpurchasesSerialiser(serializers.ModelSerializer):
+class PurchasesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblpurchases"
+        model = "Purchases"
         fields = '__all__'
-class TblreturnSerialiser(serializers.ModelSerializer):
+class ReturnsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblreturn"
+        model = "Returns"
         fields = '__all__'
-class TblreviewsSerialiser(serializers.ModelSerializer):
+class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblreviews"
+        model = "Reviews"
         fields = '__all__'
-class TblshippingmethodSerialiser(serializers.ModelSerializer):
+class ShippingMethodSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblshippingmethod"
+        model = "ShippingMethod"
         fields = '__all__'
-class TblshoppingcartSerialiser(serializers.ModelSerializer):
+class ShoppingCartSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblshoppingcart"
+        model = "ShoppingCart"
         fields = '__all__'
-class TblsupplierSerialiser(serializers.ModelSerializer):
+class SupplierSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tblsupplier"
+        model = "Supplier"
         fields = '__all__'
-class TbltaxSerialiser(serializers.ModelSerializer):
+class TaxSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tbltax"
+        model = "Tax"
         fields = '__all__'
-class TbltittleSerialiser(serializers.ModelSerializer):
+class TittleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tbltittle"
+        model = "Tittle"
         fields = '__all__'
-class TbluserSerialiser(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = "Tbluser"
+        model = "User"
         fields = '__all__'

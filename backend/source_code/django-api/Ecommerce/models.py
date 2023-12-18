@@ -96,7 +96,7 @@ class Gender(models.Model):
         db_table = 'tblgender'
 
 
-class Tblinventory(models.Model):
+class Inventory(models.Model):
     invid = models.AutoField(db_column='invId', primary_key=True)  # Field name made lowercase.
     invitemprdidfk = models.IntegerField(db_column='invItemPrdIdfk', blank=True,
                                          null=True)  # Field name made lowercase.
@@ -134,7 +134,7 @@ class Tblinventory(models.Model):
         db_table = 'tblinventory'
 
 
-class Tblorder(models.Model):
+class Order(models.Model):
     ordidpk = models.AutoField(db_column='ordIdpk', primary_key=True)  # Field name made lowercase.
     ordcustidfk = models.IntegerField(db_column='ordCustIdfk', blank=True, null=True)  # Field name made lowercase.
     orddate = models.DateField(db_column='ordDate', blank=True, null=True)  # Field name made lowercase.
@@ -157,7 +157,7 @@ class Tblorder(models.Model):
         db_table = 'tblorder'
 
 
-class Tblorderitems(models.Model):
+class OrderItems(models.Model):
     itemid = models.AutoField(db_column='itemID', primary_key=True)  # Field name made lowercase.
     itemordidfk = models.ForeignKey(Tblorder, models.DO_NOTHING, db_column='itemOrdIdfk', blank=True,
                                     null=True)  # Field name made lowercase.
@@ -177,7 +177,7 @@ class Tblorderitems(models.Model):
         db_table = 'tblorderitems'
 
 
-class Tblpaymentstatus(models.Model):
+class PaymentStatus(models.Model):
     paymentstatusidpk = models.AutoField(db_column='paymentStatusIdpk', primary_key=True)  # Field name made lowercase.
     paymentstatus = models.CharField(db_column='paymentStatus', max_length=255, blank=True,
                                      null=True)  # Field name made lowercase.
@@ -187,7 +187,7 @@ class Tblpaymentstatus(models.Model):
         db_table = 'tblpaymentstatus'
 
 
-class Tblproduct(models.Model):
+class Product(models.Model):
     prdidpk = models.AutoField(db_column='prdIdpk', primary_key=True)  # Field name made lowercase.
     prdname = models.CharField(db_column='prdName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     prdbrandidfk = models.ForeignKey('Tblproductbrand', models.DO_NOTHING, db_column='prdBrandIdfk', blank=True,
@@ -206,7 +206,7 @@ class Tblproduct(models.Model):
         db_table = 'tblproduct'
 
 
-class Tblproductbrand(models.Model):
+class ProcuctBrand(models.Model):
     prdbrandidpk = models.AutoField(db_column='prdBrandIdpk', primary_key=True)  # Field name made lowercase.
     prdbrandname = models.CharField(db_column='prdBrandName', max_length=255, blank=True,
                                     null=True)  # Field name made lowercase.
@@ -327,7 +327,7 @@ class ShoppingCart(models.Model):
         db_table = 'tblshoppingcart'
 
 
-class Tblsupplier(models.Model):
+class Supplier(models.Model):
     splidpk = models.AutoField(db_column='splIdpk', primary_key=True)  # Field name made lowercase.
     splname = models.CharField(db_column='splName', max_length=50, blank=True, null=True)  # Field name made lowercase.
     spladdress = models.CharField(db_column='splAddress', max_length=100, blank=True,
@@ -346,7 +346,7 @@ supplier_obj.splname = "Bright"
 supplier_obj.spladdress = "Mayten St."
 
 
-class Tbltax(models.Model):
+class Tax(models.Model):
     field_taxidpk = models.AutoField(db_column='\xa0taxIdpk',
                                      primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
     field_taxname = models.CharField(db_column='\xa0taxName',
@@ -361,7 +361,7 @@ class Tbltax(models.Model):
         db_table = 'tbltax'
 
 
-class Tbltitle(models.Model):
+class Tittle(models.Model):
     tltidpk = models.AutoField(db_column='tltIdpk', primary_key=True)  # Field name made lowercase.
     tltname = models.CharField(db_column='tltName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     tltshtname = models.CharField(db_column='tltShtName', max_length=255, blank=True,
@@ -375,7 +375,7 @@ class Tbltitle(models.Model):
         db_table = 'tbltitle'
 
 
-class Tbluser(models.Model):
+class User(models.Model):
     usridpk = models.AutoField(db_column='usrIdpk', primary_key=True)  # Field name made lowercase.
     usrgndidpk = models.ForeignKey(Tblgender, models.DO_NOTHING, db_column='usrGndIdpk', blank=True,
                                    null=True)  # Field name made lowercase.
