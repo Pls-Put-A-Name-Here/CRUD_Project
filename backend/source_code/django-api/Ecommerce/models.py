@@ -146,6 +146,7 @@ class InventoryItem(models.Model):
                                                  null=True)
     inventoryItemImage = models.BinaryField(db_column='invItemProductImage', max_length=255, blank=True)
 
+
     class Meta:
         managed = False
         db_table = 'tblinventory'
@@ -221,6 +222,7 @@ class Product(models.Model):
     class Meta:
         managed = False
         db_table = 'tblproduct'
+
 
 
 class ProductBrand(models.Model):
@@ -357,7 +359,6 @@ class Supplier(models.Model):
         managed = False
         db_table = 'tblsupplier'
 
-
 class Tax(models.Model):
     field_taxidpk = models.AutoField(db_column='\xa0taxIdpk',
                                      primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
@@ -373,7 +374,9 @@ class Tax(models.Model):
         db_table = 'tbltax'
 
 
+
 class Title(models.Model):
+
     tltidpk = models.AutoField(db_column='tltIdpk', primary_key=True)  # Field name made lowercase.
     tltname = models.CharField(db_column='tltName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     tltshtname = models.CharField(db_column='tltShtName', max_length=255, blank=True,
@@ -385,3 +388,5 @@ class Title(models.Model):
     class Meta:
         managed = False
         db_table = 'tbltitle'
+
+

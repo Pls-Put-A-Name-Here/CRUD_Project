@@ -21,17 +21,16 @@ class CustomerSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = "Address"
         fields = '__all__'
 
-
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = "Country"
         fields = '__all__'
-
 
 class StateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -39,22 +38,27 @@ class StateSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class DiscountSerializer(serializers.ModelSerializer):
     class Meta:
         model = "Discount"
         fields = '__all__'
-
 
 class GenderSerializer(serializers.ModelSerializer):
     class Meta:
         model = "Gender"
         fields = '__all__'
 
-
 class InventorySerializer(serializers.ModelSerializer):
     class Meta:
         model = "Inventory"
         fields = '__all__'
+
+class TitleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = "Title"
+        fields = '__all__'
+
 
 class InventoryItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -146,7 +150,4 @@ class TaxSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TittleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = "Tittle"
-        fields = '__all__'
+
