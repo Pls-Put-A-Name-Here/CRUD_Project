@@ -97,37 +97,55 @@ class Gender(models.Model):
 
 
 class Inventory(models.Model):
-    invid = models.AutoField(db_column='invId', primary_key=True)  # Field name made lowercase.
-    invitemprdidfk = models.IntegerField(db_column='invItemPrdIdfk', blank=True,
-                                         null=True)  # Field name made lowercase.
-    invitemsupplieridfk = models.IntegerField(db_column='invItemSupplierIdfk', blank=True,
-                                              null=True)  # Field name made lowercase.
-    invitemprice = models.DecimalField(db_column='invItemPrice', max_digits=10, decimal_places=2, blank=True,
-                                       null=True)  # Field name made lowercase.
-    invitemmodelnumber = models.CharField(db_column='invItemModelnumber', max_length=255, blank=True,
-                                          null=True)  # Field name made lowercase.
-    invitemwarranty = models.CharField(db_column='invItemWarranty', max_length=255, blank=True,
-                                       null=True)  # Field name made lowercase.
-    invitemdimensions = models.CharField(db_column='invItemDimensions', max_length=255, blank=True,
-                                         null=True)  # Field name made lowercase.
-    invitemreleasedate = models.DateField(db_column='invItemReleaseDate', blank=True,
-                                          null=True)  # Field name made lowercase.
-    invitemweight = models.CharField(db_column='invItemWeight', max_length=255, blank=True,
-                                     null=True)  # Field name made lowercase.
-    invitemcolor = models.CharField(db_column='invItemColor', max_length=255, blank=True,
-                                    null=True)  # Field name made lowercase.
-    invitemfeatures = models.CharField(db_column='invItemFeatures', max_length=255, blank=True,
-                                       null=True)  # Field name made lowercase.
-    invitemspecifications = models.CharField(db_column='invItemSpecifications', max_length=255, blank=True,
-                                             null=True)  # Field name made lowercase.
-    invitemquantity = models.IntegerField(db_column='invItemQuantity', blank=True,
-                                          null=True)  # Field name made lowercase.
-    invitemproductdescription = models.CharField(db_column='invItemProductDescription', max_length=255, blank=True,
-                                                 null=True)  # Field name made lowercase.
-    invitemproductreorderpoint = models.IntegerField(db_column='invItemProductReorderPoint', blank=True,
-                                                     null=True)  # Field name made lowercase.
-    invitemproductreorderquantity = models.IntegerField(db_column='invItemProductReorderQuantity', blank=True,
-                                                        null=True)  # Field name made lowercase.
+    inventoryId = models.AutoField(db_column='invId', primary_key=True)
+    inventoryProductId = models.IntegerField(db_column='invPrdIdfk', blank=True,
+                                             null=True)
+    inventoryProductName = models.CharField(db_column='invProductName', max_length=255, blank=True)
+    inventorySupplierId = models.IntegerField(db_column='invSupplierIdfk', blank=True,
+                                              null=True)
+    inventoryUnitPrice = models.DecimalField(db_column='invUnitPrice', max_digits=10, decimal_places=2, blank=False)
+    inventoryRestockThreshold = models.IntegerField(db_column='invRestockThreshold', blank=False)
+    inventoryRestockQuantity = models.IntegerField(db_column='invRestockQuantity', blank=False)
+    inventoryStockQuantity = models.IntegerField(db_column='invStockQuantity', blank=False)
+    inventoryLastRestockDate = models.DateField(db_column='invLastRestockDate', blank=True)
+    inventoryLocation = models.CharField(db_column='invLocation', max_length=255, blank=True)
+    inventoryStatus = models.CharField(db_column='invStatus', max_length=255, blank=True)
+    inventoryCreatedDate = models.DateTimeField(db_column='invCreatedDate', blank=True, auto_now_add=True)
+    inventoryLastEditDate = models.DateTimeField(db_column='invLastEditDate', blank=True, auto_now_add=True)
+
+    class Meta:
+        managed = False
+
+
+# Made a change here to add the inventoryItem table
+class InventoryItem(models.Model):
+
+    inventoryItemId = models.AutoField(db_column='invItemId', primary_key=True)
+    inventoryId = models.ForeignKey(Inventory, models.DO_NOTHING, db_column='invIdfk', blank=True, null=True)
+    inventoryItemPrice = models.DecimalField(db_column='invItemPrice', max_digits=10, decimal_places=2, blank=True,
+                                             null=True)
+    inventoryItemModelNumber = models.CharField(db_column='invItemModelnumber', max_length=255, blank=True,
+                                                null=True)
+    inventoryItemWarranty = models.CharField(db_column='invItemWarranty', max_length=255, blank=True,
+                                             null=True)
+    inventoryItemDimensions = models.CharField(db_column='invItemDimensions', max_length=255, blank=True,
+                                         null=True)
+    inventoryItemReleaseDate = models.DateField(db_column='invItemReleaseDate', blank=True,
+                                          null=True)
+    inventoryItemWeight = models.CharField(db_column='invItemWeight', max_length=255, blank=True,
+                                     null=True)
+    inventoryItemColor = models.CharField(db_column='invItemColor', max_length=255, blank=True,
+                                    null=True)
+    inventoryItemFeatures = models.CharField(db_column='invItemFeatures', max_length=255, blank=True,
+                                       null=True)
+    inventoryItemSpecifications = models.CharField(db_column='invItemSpecifications', max_length=255, blank=True,
+                                             null=True)
+    inventoryItemQuantity = models.IntegerField(db_column='invItemQuantity', blank=True,
+                                          null=True)
+    inventoryItemDescription = models.CharField(db_column='invItemProductDescription', max_length=255, blank=True,
+                                                 null=True)
+    inventoryItemImage = models.BinaryField(db_column='invItemProductImage', max_length=255, blank=True)
+
 
     class Meta:
         managed = False
@@ -146,7 +164,7 @@ class Order(models.Model):
                                    null=True)  # Field name made lowercase.
     ordnotes = models.CharField(db_column='ordNotes', max_length=255, blank=True,
                                 null=True)  # Field name made lowercase.
-    orddiscountid = models.ForeignKey(Tbldiscount, models.DO_NOTHING, db_column='ordDiscountId', blank=True,
+    orddiscountid = models.ForeignKey(Discount, models.DO_NOTHING, db_column='ordDiscountId', blank=True,
                                       null=True)  # Field name made lowercase.
     orddeliverystatusid = models.IntegerField(db_column='ordDeliveryStatusID', blank=True,
                                               null=True)  # Field name made lowercase.
@@ -159,7 +177,7 @@ class Order(models.Model):
 
 class OrderItems(models.Model):
     itemid = models.AutoField(db_column='itemID', primary_key=True)  # Field name made lowercase.
-    itemordidfk = models.ForeignKey(Tblorder, models.DO_NOTHING, db_column='itemOrdIdfk', blank=True,
+    itemordidfk = models.ForeignKey(Order, models.DO_NOTHING, db_column='itemOrdIdfk', blank=True,
                                     null=True)  # Field name made lowercase.
     itemprdidfk = models.ForeignKey('Tblproduct', models.DO_NOTHING, db_column='itemPrdIdfk', blank=True,
                                     null=True)  # Field name made lowercase.
@@ -190,11 +208,11 @@ class PaymentStatus(models.Model):
 class Product(models.Model):
     prdidpk = models.AutoField(db_column='prdIdpk', primary_key=True)  # Field name made lowercase.
     prdname = models.CharField(db_column='prdName', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    prdbrandidfk = models.ForeignKey('Tblproductbrand', models.DO_NOTHING, db_column='prdBrandIdfk', blank=True,
+    prdbrandidfk = models.ForeignKey('ProductBrand', models.DO_NOTHING, db_column='prdBrandIdfk', blank=True,
                                      null=True)  # Field name made lowercase.
-    prdcategoryidfk = models.ForeignKey('Tblproductcategory', models.DO_NOTHING, db_column='prdCategoryIdfk',
+    prdcategoryidfk = models.ForeignKey('ProductCategory', models.DO_NOTHING, db_column='prdCategoryIdfk',
                                         blank=True, null=True)  # Field name made lowercase.
-    prdsubcategoryidfk = models.ForeignKey('Tblproductsubcategory', models.DO_NOTHING, db_column='prdSubCategoryIdfk',
+    prdsubcategoryidfk = models.ForeignKey('ProductSubcategory', models.DO_NOTHING, db_column='prdSubCategoryIdfk',
                                            blank=True, null=True)  # Field name made lowercase.
     prddescription = models.CharField(db_column='prdDescription', max_length=255, blank=True,
                                       null=True)  # Field name made lowercase.
@@ -206,7 +224,8 @@ class Product(models.Model):
         db_table = 'tblproduct'
 
 
-class ProcuctBrand(models.Model):
+
+class ProductBrand(models.Model):
     prdbrandidpk = models.AutoField(db_column='prdBrandIdpk', primary_key=True)  # Field name made lowercase.
     prdbrandname = models.CharField(db_column='prdBrandName', max_length=255, blank=True,
                                     null=True)  # Field name made lowercase.
@@ -245,13 +264,13 @@ class ProductSubCategory(models.Model):
 
 class Purchases(models.Model):
     pchidpk = models.AutoField(db_column='pchIdpk', primary_key=True)  # Field name made lowercase.
-    pchordidfk = models.ForeignKey(Tblorder, models.DO_NOTHING, db_column='pchOrdIdfk', blank=True,
+    pchordidfk = models.ForeignKey(Order, models.DO_NOTHING, db_column='pchOrdIdfk', blank=True,
                                    null=True)  # Field name made lowercase.
     pchammount = models.DecimalField(db_column='pchAmmount', max_digits=10, decimal_places=2, blank=True,
                                      null=True)  # Field name made lowercase.
     pchpurchasedate = models.DateField(db_column='pchPurchaseDate', blank=True, null=True)  # Field name made lowercase.
     pchtypeid = models.IntegerField(db_column='pchTypeId', blank=True, null=True)  # Field name made lowercase.
-    pchpaymentstatusidfk = models.ForeignKey(Tblpaymentstatus, models.DO_NOTHING, db_column='pchPaymentStatusIdfk',
+    pchpaymentstatusidfk = models.ForeignKey(PaymentStatus, models.DO_NOTHING, db_column='pchPaymentStatusIdfk',
                                              blank=True, null=True)  # Field name made lowercase.
     pchlasteditdate = models.DateTimeField(db_column='pchLastEditDate', blank=True,
                                            null=True)  # Field name made lowercase.
@@ -317,7 +336,7 @@ class ShippingMethod(models.Model):
 
 
 class ShoppingCart(models.Model):
-    cartidpk = models.OneToOneField(Tblcustomer, models.DO_NOTHING, db_column='cartIdpk',
+    cartidpk = models.OneToOneField(Customer, models.DO_NOTHING, db_column='cartIdpk',
                                     primary_key=True)  # Field name made lowercase.
     custidfk = models.IntegerField(db_column='custIdfk')  # Field name made lowercase.
     created_at = models.DateTimeField()
@@ -340,12 +359,6 @@ class Supplier(models.Model):
         managed = False
         db_table = 'tblsupplier'
 
-
-supplier_obj = Tblsupplier()
-supplier_obj.splname = "Bright"
-supplier_obj.spladdress = "Mayten St."
-
-
 class Tax(models.Model):
     field_taxidpk = models.AutoField(db_column='\xa0taxIdpk',
                                      primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
@@ -361,7 +374,9 @@ class Tax(models.Model):
         db_table = 'tbltax'
 
 
-class Tittle(models.Model):
+
+class Title(models.Model):
+
     tltidpk = models.AutoField(db_column='tltIdpk', primary_key=True)  # Field name made lowercase.
     tltname = models.CharField(db_column='tltName', max_length=255, blank=True, null=True)  # Field name made lowercase.
     tltshtname = models.CharField(db_column='tltShtName', max_length=255, blank=True,
@@ -375,27 +390,3 @@ class Tittle(models.Model):
         db_table = 'tbltitle'
 
 
-class User(models.Model):
-    usridpk = models.AutoField(db_column='usrIdpk', primary_key=True)  # Field name made lowercase.
-    usrgndidpk = models.ForeignKey(Tblgender, models.DO_NOTHING, db_column='usrGndIdpk', blank=True,
-                                   null=True)  # Field name made lowercase.
-    usrtltidfk = models.ForeignKey(Tbltitle, models.DO_NOTHING, db_column='usrTltIdfk', blank=True,
-                                   null=True)  # Field name made lowercase.
-    usrname = models.CharField(db_column='usrName', unique=True, max_length=25, blank=True,
-                               null=True)  # Field name made lowercase.
-    usraddress = models.CharField(db_column='usrAddress', max_length=25, blank=True,
-                                  null=True)  # Field name made lowercase.
-    usrpassword = models.CharField(db_column='usrPassword', max_length=25, blank=True,
-                                   null=True)  # Field name made lowercase.
-    usrisadmin = models.IntegerField(db_column='usrIsAdmin', blank=True, null=True)  # Field name made lowercase.
-    usrisemployee = models.IntegerField(db_column='usrIsEmployee', blank=True, null=True)  # Field name made lowercase.
-    usrismanager = models.IntegerField(db_column='usrIsManager', blank=True, null=True)  # Field name made lowercase.
-    usrisactive = models.IntegerField(db_column='usrIsActive', blank=True, null=True)  # Field name made lowercase.
-    usrregistrationdate = models.DateField(db_column='usrRegistrationDate', blank=True,
-                                           null=True)  # Field name made lowercase.
-    usrlasteditdate = models.DateTimeField(db_column='usrLastEditDate', blank=True,
-                                           null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'tbluser'
