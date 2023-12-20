@@ -20,6 +20,9 @@ from drf_spectacular.views import SpectacularAPIView,  SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 from core.routers import router as core_router
 from ecommerce.routers import router as ecommerce_router
+from ecommerce.routers import urlpatterns as ecommerce_urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +30,8 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='api-schema'),name='api-docs'),
     path('api/',include(core_router.urls)),
     path('api/',include(ecommerce_router.urls)),
+    path('api/',include(ecommerce_urlpatterns))
+
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

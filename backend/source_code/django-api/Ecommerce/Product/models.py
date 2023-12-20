@@ -6,9 +6,9 @@ class Product(models.Model):
     Name = models.CharField(db_column='prdname', max_length=255, blank=True, null=True)
     Brand = models.ForeignKey('ProductBrand', models.DO_NOTHING, blank=True,db_column='prdbrandidfk',
                               null=True)
-    CategoryId = models.ForeignKey('ProductCategory', models.DO_NOTHING,db_column='prdcategoryidfk',
+    Category = models.ForeignKey('ProductCategory', models.DO_NOTHING,db_column='prdcategoryidfk',
                                    blank=True, null=True)
-    SubcategoryId = models.ForeignKey('ProductSubcategory', models.DO_NOTHING,db_column='prdsubcategoryidfk',
+    Subcategory = models.ForeignKey('ProductSubcategory', models.DO_NOTHING,db_column='prdsubcategoryidfk',
                                       blank=True, null=True)
     Description = models.CharField(db_column='prddescription', max_length=255, blank=True,
                                    null=True)
@@ -55,3 +55,17 @@ class ProductSubCategory(models.Model):
     class Meta:
         managed = False
         db_table = 'tblproductsubcategory'
+
+
+class ProductImage(models.Model):
+    Id = models.AutoField(db_column='prdimageidpk', primary_key=True)
+    Product = models.ForeignKey(Product, models.DO_NOTHING, db_column='prdimageprdidfk')
+    ImageUrl = models.FileField(db_column="prdimageurl")
+    UploadedOn = models.DateTimeField(auto_now_add=True,db_column='uploadedon')
+
+    def __str__(self):
+        return self.UploadedOn.date()
+
+    class Meta:
+        managed = True
+        db_table = 'tblproductimage'
