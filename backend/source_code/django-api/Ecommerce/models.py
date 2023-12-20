@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -388,5 +389,4 @@ class Title(models.Model):
     class Meta:
         managed = False
         db_table = 'tbltitle'
-
 

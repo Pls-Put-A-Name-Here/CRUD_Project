@@ -11,12 +11,12 @@ from rest_framework.views import APIView
 
 from django.db import connection
 
-def get_product_details(request):
-    with connection.cursor() as cursor:
-        cursor.callproc("GetProductDetails")
-        results = cursor.fetchall()
-        data = [{'product_name': row[0],'product_brand':[1],'product_category':[2],'product_subcategory':row[3], 'product_description': row[4] ,'product_price':[5] } for row in results]
-    return JsonResponse(data, safe=False)
+# def get_product_details(request):
+#     with connection.cursor() as cursor:
+#         cursor.callproc("GetProductDetails")
+#         results = cursor.fetchall()
+#         data = [{'product_name': row[0],'product_brand':[1],'product_category':[2],'product_subcategory':row[3], 'product_description': row[4] ,'product_price':[5] } for row in results]
+#     return JsonResponse(data, safe=False)
 
 
 # @csrf_exempt
@@ -59,3 +59,4 @@ def get_product_details(request):
 #         person = Person.objects.get(Id=id)
 #         person.delete()
 #         return JsonResponse("Deleted Successfully", safe=False)
+

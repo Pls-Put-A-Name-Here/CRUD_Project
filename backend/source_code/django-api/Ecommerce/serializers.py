@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 
 
@@ -148,6 +149,5 @@ class TaxSerializer(serializers.ModelSerializer):
     class Meta:
         model = "Tax"
         fields = '__all__'
-
 
 
